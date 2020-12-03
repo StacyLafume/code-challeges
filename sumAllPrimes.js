@@ -15,7 +15,7 @@ const sumAllPrimes = range => {
     for(let i = 2; i <= range; i++){
         if(isPrime(i)){
             total += i
-        }
+        } 
     }
     return total;
 }
