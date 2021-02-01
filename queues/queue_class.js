@@ -14,6 +14,13 @@ class Queue {
     size = function() {
         return this.queue.length;
     }; 
+
+    first = function(){
+        return this.queue[0]
+    }
+    last = function(){
+        return this.queue[this.queue.length - 1]
+    }
     
   };
   
@@ -23,7 +30,11 @@ class Queue {
   q.enqueue(1)
   q.enqueue(2)
   q.enqueue(3)
+  console.log(q.first()) // 1
+  console.log(q.last()) // 3
   console.log( q.size()) // 3
 
   q.dequeue()
   console.log( q.size()) // 2
+
+  
