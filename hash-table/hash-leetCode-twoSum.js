@@ -15,3 +15,5 @@ function twoSum(numbers, target) {
       seen.set(x, i);
     }
   }
+
+  console.log(twoSum([1,2,3,4,5,6], 3))

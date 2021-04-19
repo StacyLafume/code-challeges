@@ -1,4 +1,5 @@
 // hash helper function 
+// random index in the hash
 const hash = (key, size) => {
     let hashedKey = 0
     for (let i = 0; i < key.length; i++) {
@@ -21,11 +22,12 @@ class HashTable {
     }
 
     insert(key, value){
+        // random index in the hash
         let index = hash(key, this.size)
         // adding key value pair into the map
         this.buckets[index].set(key, value)
     }
-
+   
     remove(key) {
         let index = hash(key, this.size)
         // store bucket map to delete in deleted
@@ -43,3 +45,19 @@ class HashTable {
     }
     
 }
+
+const hashTable = new HashTable()
+
+hashTable.insert('serena', 'moon')
+hashTable.insert('amy', 'mercury')
+hashTable.insert('rei', 'mars')
+hashTable.insert('lita', 'jupiter')
+hashTable.insert('mina', 'venus')
+hashTable.insert('darien', 'tuxedo mask')
+
+console.log(hashTable.search('rei'))
+console.log(hashTable.search('lita'))
+console.log(hashTable.search('serena'))
+
+console.log(hashTable.remove('darien'))
+console.log(hashTable.remove('mina'))
